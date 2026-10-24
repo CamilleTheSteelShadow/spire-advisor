@@ -1,0 +1,27 @@
+schema_version: 1
+notes:
+  - Relic modifiers should be local and conditional.
+  - Do not convert one good run into a global weight change without regression evidence.
+
+relics:
+  - id: armguard
+    name: 臂甲
+    aliases: [首张格挡翻倍, first_block_multiplier]
+    trigger: first_block_from_card_each_combat_is_doubled
+    enabled_tags: [first_block_multiplier]
+    modifiers:
+      burst_block_score: 18
+      small_block_score: 6
+      block_upgrade_priority: 16
+      elite_readiness_with_reliable_block: 8
+    card_rules:
+      - condition: card_tags contains burst_block
+        effect: Add large block synergy and consider shop purchase if block or elite_survival is active.
+      - condition: card_tags contains small_block and upgrade_crosses_block_threshold
+        effect: Raise smith priority, but avoid upgrading starter Defend unless no better block exists.
+      - condition: card_cost >= 2 and card_tags contains only_block
+        effect: Reduce cost penalty only when the next route includes heavy attack pressure.
+    risks:
+      - Overvaluing slow, pure block in fights that demand fast damage.
+      - Forgetting the relic only affects the first block card in each combat.
+

@@ -1,0 +1,173 @@
+{
+  "run": {
+    "act": 1,
+    "floor": 7,
+    "ascension": 0
+  },
+  "player": {
+    "character": "演示角色",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 170,
+    "max_potion_slots": 3,
+    "deck": [
+      {
+        "index": 0,
+        "id": "DEMO_0",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 1,
+        "id": "DEMO_1",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 2,
+        "id": "DEMO_2",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 3,
+        "id": "DEMO_3",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 4,
+        "id": "DEMO_4",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 5,
+        "id": "DEMO_5",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 6,
+        "id": "DEMO_6",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 7,
+        "id": "DEMO_7",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 8,
+        "id": "DEMO_8",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 9,
+        "id": "DEMO_9",
+        "name": "演示·重击",
+        "type": "Attack",
+        "cost": "2",
+        "description": "造成 12 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 10,
+        "id": "DEMO_10",
+        "name": "演示·战意",
+        "type": "Power",
+        "cost": "1",
+        "description": "获得 2 点力量。",
+        "rarity": "Common",
+        "is_upgraded": false
+      }
+    ],
+    "relics": [
+      {
+        "id": "DEMO_RELIC",
+        "name": "演示·旅人徽记",
+        "description": "演示遗物：每场战斗开始时获得 3 点格挡。"
+      }
+    ],
+    "potions": [
+      {
+        "id": "DEMO_POTION",
+        "name": "演示·护盾药水",
+        "description": "演示药水：获得 12 点格挡。",
+        "slot": 0
+      }
+    ]
+  },
+  "state_type": "event",
+  "event": {
+    "event_id": "DEMO_EVENT",
+    "event_name": "演示·岔路旁的祭坛",
+    "body": "以下是虚构事件，用于测试推荐流程。",
+    "options": [
+      {
+        "index": 0,
+        "title": "献出生命",
+        "description": "失去 15 点生命，获得 100 金币。",
+        "is_locked": false
+      },
+      {
+        "index": 1,
+        "title": "整理行囊",
+        "description": "支付 60 金币，删除一张牌。",
+        "is_locked": false
+      },
+      {
+        "index": 2,
+        "title": "离开",
+        "description": "无事发生。",
+        "is_locked": false
+      },
+      {
+        "index": 3,
+        "title": "封印的馈赠",
+        "description": "不可选择的演示选项。",
+        "is_locked": true
+      }
+    ]
+  }
+}

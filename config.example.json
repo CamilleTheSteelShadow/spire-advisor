@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://api.deepseek.com/v1",
+  "model": "填写服务商提供的模型名称",
+  "apiKey": "在助手设置中填写，不要提交真实密钥",
+  "jsonMode": true
+}

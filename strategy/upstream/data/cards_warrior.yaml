@@ -1,0 +1,109 @@
+schema_version: 1
+notes:
+  - Tags are scoring hints for the AI driver, not final card ratings.
+  - Keep numeric card text out unless it has been verified in the current game build.
+  - Prefer adding tags after a run demonstrates a concrete decision impact.
+
+tag_legend:
+  frontload: Helps solve Act 1 damage and short fights.
+  cheap_attack: Low-cost attack that keeps turns flexible.
+  multi_hit: Removes slippery/damage-cap layers efficiently.
+  scaling: Improves long-fight damage or defense.
+  vulnerable: Applies or benefits strongly from Vulnerable.
+  weak: Applies or benefits strongly from Weak.
+  aoe: Helps solve multi-enemy fights.
+  burst_block: Large single-card block or threshold defense.
+  small_block: Low-to-medium block card that improves with block relics.
+  draw: Improves card access or consistency.
+  energy: Improves energy or cost efficiency.
+  exhaust: Exhausts itself or supports exhaust engines.
+  expensive: Has cost/clunk risk without support.
+  only_block: Provides block but little or no damage/control.
+  starter: Initial deck card.
+  low_impact: Card that usually becomes draw pollution after the opening floors.
+  upgrade_priority: Upgrade can materially change thresholds, cost, or reliability.
+  upgrade_dependent: Weak until upgraded or until support exists.
+  slippery_counter: Especially valuable against Slippery or damage-cap enemies.
+  shop_candidate: Worth reconsidering in shop when it solves an active weakness.
+
+cards:
+  - id: pommel_setup_strike
+    name: 预备打击
+    aliases: [预备打击+]
+    roles: [damage, scaling]
+    tags: [frontload, cheap_attack, scaling, slippery_counter]
+    notes: Early damage plus temporary strength; strong before Slippery layers are gone.
+
+  - id: inflame
+    name: 燃烧
+    roles: [scaling]
+    tags: [scaling, upgrade_priority]
+    notes: Good boss and long-fight plan, but unsafe if the current turn needs block.
+
+  - id: dismantle
+    name: 拆卸
+    roles: [damage, boss_solution]
+    tags: [frontload, multi_hit, vulnerable, slippery_counter]
+    notes: Much better with Vulnerable already applied; excellent layer removal.
+
+  - id: uppercut
+    name: 上勾拳
+    roles: [damage, control]
+    tags: [frontload, vulnerable, weak, expensive, upgrade_priority]
+    notes: Solves offense and defense together, but cost can create awkward turns.
+
+  - id: tremor
+    name: 战栗
+    roles: [control, scaling]
+    tags: [vulnerable, exhaust, upgrade_priority]
+    notes: Enables burst turns; do not pick before the deck has enough actual damage.
+
+  - id: bludgeon
+    name: 重锤
+    roles: [damage]
+    tags: [frontload, expensive, upgrade_dependent]
+    notes: One copy can solve Act 1 damage; penalize heavily against high Slippery layers.
+
+  - id: stomp
+    name: 踩踏
+    roles: [damage, aoe]
+    tags: [aoe, expensive, upgrade_dependent]
+    notes: Needs attack density or cost support to avoid clunk.
+
+  - id: blood_wall
+    name: 血墙
+    roles: [block]
+    tags: [burst_block, shop_candidate]
+    notes: Large block with HP cost; stronger with self-healing, weaker at low HP.
+
+  - id: evil_eye
+    name: 邪眼
+    aliases: [邪眼+]
+    roles: [block, control]
+    tags: [small_block, weak, upgrade_priority, shop_candidate]
+    notes: With first-block-multiplier relics, upgrade value rises sharply.
+
+  - id: impervious_like
+    name: 岿然不动
+    roles: [block]
+    tags: [burst_block, exhaust, shop_candidate]
+    notes: Strong shop candidate when block or elite_survival is an active weakness.
+
+  - id: strike
+    name: Strike
+    roles: [damage]
+    tags: [starter, low_impact]
+    notes: Useful only early; usually first removal unless damage is still dangerously low.
+
+  - id: defend
+    name: Defend
+    roles: [block]
+    tags: [starter, small_block, low_impact]
+    notes: Do not remove too early if block is still a weakness.
+
+  - id: bash
+    name: Bash
+    aliases: [痛击]
+    roles: [damage, control]
+    tags: [vulnerable, expensive, upgrade_priority]
+    notes: Important early Vulnerable source; later value depends on better debuff access.

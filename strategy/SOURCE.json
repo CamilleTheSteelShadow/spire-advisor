@@ -1,0 +1,39 @@
+{
+  "repository": "https://github.com/mxnklimt/AI_slaythespire",
+  "commit": "904b6f59b98a6cfd77b4ae26f72f2746e4a97025",
+  "retrieved": "2026-10-21",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "C5F1CE14A1DAD8D5D6617354644DF51BF6916F2113BA1C16C8F442891DC5CDB0"
+    },
+    {
+      "path": "data/cards_warrior.yaml",
+      "sha256": "342F8BA5D2FAD72D28F2FE88B1AF351FC0CE795B18E0C60B6A4F9C6FE0F8F6EF"
+    },
+    {
+      "path": "data/relic_modifiers.yaml",
+      "sha256": "CD457CB1FE69D3C51C97B8791A97718A6F5864E5705DF75B8E54DB743C70CF27"
+    },
+    {
+      "path": "references/broken_star_sts_strategy.md",
+      "sha256": "98F74AEE0C53E161BD593393063CBCBBAD79A3DBDAB72F484659BE84117C005A"
+    },
+    {
+      "path": "references/card_selection_scoring.md",
+      "sha256": "E7DC414CE259398422EF4CFB4E4D7252336D61D2FD9755A89420AA14BEF8D112"
+    },
+    {
+      "path": "references/deck_strength_evaluation.md",
+      "sha256": "6A533F3A7C939A09EA7FC969DFA66BB6F22D3A916D92513C99FE5DDDF24BEF29"
+    },
+    {
+      "path": "references/sources.md",
+      "sha256": "D8D9A7DF6F2845C120029F1F905D3BD0327E5C55ED8E5258B3392AA4B100921B"
+    },
+    {
+      "path": "tests/decision_fixtures.yaml",
+      "sha256": "A4F027958E400F8D2685B46094713746C68F21A4A9144CD2C124FA72DCE958FD"
+    }
+  ]
+}

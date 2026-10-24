@@ -1,0 +1,2 @@
+using System;using System.Diagnostics;using System.IO;using System.Windows.Forms;
+static class Launcher{[STAThread]static void Main(){var root=AppDomain.CurrentDomain.BaseDirectory;var file=Path.Combine(root,"desktop","SpireAdvisor.exe");if(!File.Exists(file)){MessageBox.Show("桌面组件不完整，请保留整个助手文件夹。","尖塔领航");return;}Process.Start(new ProcessStartInfo(file){WorkingDirectory=root,UseShellExecute=true});}}

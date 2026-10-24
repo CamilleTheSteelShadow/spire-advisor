@@ -1,0 +1,268 @@
+{
+  "run": {
+    "act": 1,
+    "floor": 7,
+    "ascension": 0
+  },
+  "player": {
+    "character": "演示角色",
+    "hp": 32,
+    "max_hp": 80,
+    "gold": 170,
+    "max_potion_slots": 3,
+    "deck": [
+      {
+        "index": 0,
+        "id": "DEMO_0",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 1,
+        "id": "DEMO_1",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 2,
+        "id": "DEMO_2",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 3,
+        "id": "DEMO_3",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 4,
+        "id": "DEMO_4",
+        "name": "演示·基础攻击",
+        "type": "Attack",
+        "cost": "1",
+        "description": "造成 6 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 5,
+        "id": "DEMO_5",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 6,
+        "id": "DEMO_6",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 7,
+        "id": "DEMO_7",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 8,
+        "id": "DEMO_8",
+        "name": "演示·基础防御",
+        "type": "Skill",
+        "cost": "1",
+        "description": "获得 5 点格挡。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 9,
+        "id": "DEMO_9",
+        "name": "演示·重击",
+        "type": "Attack",
+        "cost": "2",
+        "description": "造成 12 点伤害。",
+        "rarity": "Common",
+        "is_upgraded": false
+      },
+      {
+        "index": 10,
+        "id": "DEMO_10",
+        "name": "演示·战意",
+        "type": "Power",
+        "cost": "1",
+        "description": "获得 2 点力量。",
+        "rarity": "Common",
+        "is_upgraded": false
+      }
+    ],
+    "relics": [
+      {
+        "id": "DEMO_RELIC",
+        "name": "演示·旅人徽记",
+        "description": "演示遗物：每场战斗开始时获得 3 点格挡。"
+      }
+    ],
+    "potions": [
+      {
+        "id": "DEMO_POTION",
+        "name": "演示·护盾药水",
+        "description": "演示药水：获得 12 点格挡。",
+        "slot": 0
+      }
+    ]
+  },
+  "state_type": "map",
+  "map": {
+    "current_position": {
+      "col": 2,
+      "row": 6
+    },
+    "next_options": [
+      {
+        "index": 0,
+        "col": 1,
+        "row": 7,
+        "type": "Monster",
+        "children": [
+          [
+            1,
+            8
+          ]
+        ]
+      },
+      {
+        "index": 1,
+        "col": 3,
+        "row": 7,
+        "type": "Elite",
+        "children": [
+          [
+            3,
+            8
+          ]
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "col": 1,
+        "row": 7,
+        "type": "Monster",
+        "children": [
+          [
+            1,
+            8
+          ]
+        ]
+      },
+      {
+        "col": 3,
+        "row": 7,
+        "type": "Elite",
+        "children": [
+          [
+            3,
+            8
+          ]
+        ]
+      },
+      {
+        "col": 1,
+        "row": 8,
+        "type": "RestSite",
+        "children": [
+          [
+            2,
+            9
+          ]
+        ]
+      },
+      {
+        "col": 3,
+        "row": 8,
+        "type": "Monster",
+        "children": [
+          [
+            2,
+            9
+          ],
+          [
+            4,
+            9
+          ]
+        ]
+      },
+      {
+        "col": 2,
+        "row": 9,
+        "type": "Shop",
+        "children": [
+          [
+            2,
+            10
+          ]
+        ]
+      },
+      {
+        "col": 4,
+        "row": 9,
+        "type": "Elite",
+        "children": [
+          [
+            2,
+            10
+          ]
+        ]
+      },
+      {
+        "col": 2,
+        "row": 10,
+        "type": "RestSite",
+        "children": [
+          [
+            2,
+            11
+          ]
+        ]
+      },
+      {
+        "col": 2,
+        "row": 11,
+        "type": "Boss",
+        "children": []
+      }
+    ],
+    "boss": {
+      "col": 2,
+      "row": 11,
+      "name": "演示首领（虚构）"
+    }
+  }
+}

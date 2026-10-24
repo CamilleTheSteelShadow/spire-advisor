@@ -1,0 +1,10 @@
+{
+  "id": "SpireAdvisorDeck",
+  "name": "Spire Advisor Deck Reader",
+  "author": "Spire Advisor",
+  "description": "Exports the permanent deck and isolated upgrade previews; fixes STS2_MCP shop reading for game v0.107.1. Exports event completion and disables bridge auto-opening the merchant UI.",
+  "version": "0.6.0",
+  "has_pck": false,
+  "has_dll": true,
+  "affects_gameplay": false
+}

@@ -1,0 +1,108 @@
+schema_version: 1
+purpose: Regression examples for strategy decisions. These are not game-engine tests; they are reasoning fixtures for future tuning.
+
+fixtures:
+  - id: no_auto_leave_shop
+    state:
+      act: 1
+      gold: 164
+      hp_ratio: 0.62
+      route_readiness_state: risky
+      weakness_tags: [block, draw]
+      shop_options: [remove_card, block_potion, medium_attack]
+    expected:
+      decision: evaluate_purchase
+      priority_order: [remove_card, block_potion, medium_attack, leave]
+      reason: Gold can become removal or immediate survival; leaving is only valid after all concrete purchases are worse than saving gold.
+
+  - id: slippery_boss_hold_bludgeon
+    state:
+      enemy_mechanic: slippery
+      slippery_layers: 5
+      hand_tags:
+        cheap_attack: 2
+        multi_hit: 1
+        expensive_single_hit: 1
+      hp_safe_this_turn: true
+    expected:
+      decision: strip_layers_first
+      avoid_tags: [expensive_single_hit]
+      reason: High Slippery layers compress big single-hit damage into low value.
+
+  - id: low_hp_use_potion
+    state:
+      hp_ratio: 0.28
+      incoming_damage: lethal_without_potion
+      potion_options: [block_potion]
+      route_next_safe_node: false
+    expected:
+      decision: use_potion
+      reason: Potion value is realized when it prevents death or route failure.
+
+  - id: armguard_upgrade_evil_eye
+    state:
+      relics: [臂甲]
+      weakness_tags: [block, elite_survival]
+      candidate_upgrade:
+        name: 邪眼
+        tags: [small_block, weak, upgrade_priority]
+        upgrade_crosses_block_threshold: true
+    expected:
+      decision: raise_smith_priority
+      reason: First-block multiplier turns upgraded single-card block into an elite-survival threshold answer.
+
+  - id: strong_deck_skip_medium_attack
+    state:
+      route_readiness_state: strong
+      deck_size: 20
+      weakness_tags: []
+      reward_tags:
+        card_a: [frontload, low_impact]
+        card_b: [expensive]
+        card_c: [upgrade_dependent]
+    expected:
+      decision: skip
+      reason: Medium transition cards reduce key-card density when the next route pressure is already answered.
+
+  - id: attack_saturated_skip_generic_reward
+    state:
+      act: 2
+      deck_size: 21
+      route_readiness_state: acceptable
+      weakness_tags: [block, draw]
+      usable_attack_count: 6
+      efficient_block_count: 2
+      reward_tags:
+        card_a: [frontload, generic_attack]
+        card_b: [frontload, duplicate_role]
+        card_c: [slow_scaling, upgrade_dependent]
+    expected:
+      decision: skip
+      reason: The deck already has enough attacks; none of the rewards improves block, draw, or long-run consistency.
+
+  - id: low_hp_defense_over_more_damage
+    state:
+      act: 2
+      hp_ratio: 0.38
+      recent_fights_lost_high_hp: true
+      next_route: [monster, unknown, boss]
+      weakness_tags: [block, elite_survival]
+      reward_tags:
+        card_a: [generic_attack]
+        card_b: [efficient_block]
+        card_c: [medium_attack]
+    expected:
+      decision: pick_card_b
+      reason: Low HP and repeated HP loss make reliable block more valuable than another medium attack.
+
+  - id: segment_goal_blocks_greedy_elite
+    state:
+      act: 2
+      hp_ratio: 0.52
+      route_readiness_state: risky
+      segment_survival_budget: tight
+      has_relevant_potion: false
+      next_options: [elite, rest_site]
+    expected:
+      decision: choose_rest_site
+      reason: The goal is to pass the act segment; a risky elite without potion support threatens route failure.
